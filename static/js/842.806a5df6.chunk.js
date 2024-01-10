@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfood_app=self.webpackChunkfood_app||[]).push([[842],{842:(e,s,a)=>{a.r(s),a.d(s,{default:()=>p});var n=a(184);const p=()=>(0,n.jsxs)("div",{children:[(0,n.jsx)("h1",{children:"Instamart"}),(0,n.jsx)("p",{children:"Very large component"})]})}}]);
+//# sourceMappingURL=842.806a5df6.chunk.js.map
