@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/FoodHub-Food-App/static/css/main.28b6b132.css",
-    "main.js": "/FoodHub-Food-App/static/js/main.3c859f99.js",
+    "main.css": "/FoodHub-Food-App/static/css/main.af19d62d.css",
+    "main.js": "/FoodHub-Food-App/static/js/main.83dc4ee0.js",
     "static/js/842.806a5df6.chunk.js": "/FoodHub-Food-App/static/js/842.806a5df6.chunk.js",
     "static/js/496.d360ab16.chunk.js": "/FoodHub-Food-App/static/js/496.d360ab16.chunk.js",
     "index.html": "/FoodHub-Food-App/index.html",
-    "main.28b6b132.css.map": "/FoodHub-Food-App/static/css/main.28b6b132.css.map",
-    "main.3c859f99.js.map": "/FoodHub-Food-App/static/js/main.3c859f99.js.map",
+    "main.af19d62d.css.map": "/FoodHub-Food-App/static/css/main.af19d62d.css.map",
+    "main.83dc4ee0.js.map": "/FoodHub-Food-App/static/js/main.83dc4ee0.js.map",
     "842.806a5df6.chunk.js.map": "/FoodHub-Food-App/static/js/842.806a5df6.chunk.js.map",
     "496.d360ab16.chunk.js.map": "/FoodHub-Food-App/static/js/496.d360ab16.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.28b6b132.css",
-    "static/js/main.3c859f99.js"
+    "static/css/main.af19d62d.css",
+    "static/js/main.83dc4ee0.js"
   ]
 }
