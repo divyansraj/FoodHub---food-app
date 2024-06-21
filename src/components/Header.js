@@ -1,94 +1,83 @@
-import { useState, useEffect, useContext } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
-import { baseUrl } from "../config";
 import { useSelector } from "react-redux";
 import Location from "./Location";
-// const loggedInUser = () => {
-//   //authetication api
-//   return true;
-// };
 
 const Title = () => {
   return (
     <div className="flex">
-      <Link to={baseUrl + "/"} className="flex">
-      <img
-        className=" w-48 "
-        src="https://foodhub.modeltheme.com/wp-content/themes/foodhub/images/logo.png"
-        alt="logo"
-      />
-    </Link>
-
+      <Link to={"/"} className="flex">
+        <img
+          className="w-48"
+          src="https://foodhub.modeltheme.com/wp-content/themes/foodhub/images/logo.png"
+          alt="logo"
+        />
+      </Link>
     </div>
-    
   );
 };
 
 const Header = () => {
- 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isonline = useOnline();
-
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
-    <div className="header">
-    
-      <div className="bg-[#0b1419] flex justify-between items-center py-2 px-10">
-        <Title />
-        <Location/>
-        <div data-testid="onlineStatus" className="absolute top-0 left-0">{isonline ? "📶" : " ⛔"}</div>
-        <div>
-          <ul className="nav-items flex text-white p-1">
-            <li className=" m-2 font-medium cursor-pointer  ">
-              <Link to={baseUrl + "/"}>Home</Link>
-            </li>
-            <li className=" m-2 font-medium cursor-pointer  ">
-              <Link to={baseUrl + "/recipes"}>Recipes</Link>
-            </li>
-            {/* <li className=" m-2 font-medium cursor-pointer  ">Pages</li>
-            <li className=" m-2 font-medium cursor-pointer  ">Blog</li> */}
-            <li className=" m-2 font-medium cursor-pointer  ">
-              <Link to={baseUrl + "/contact"}>Contact</Link>
-            </li>
-            <li className=" m-2 font-medium cursor-pointer  ">
-              <Link to={baseUrl + "/about"}>About</Link>
-            </li>
-            <li className=" m-2 font-medium cursor-pointer  ">
-              <Link to={baseUrl + "/instamart"}>InstaMart</Link>
-            </li>
-          </ul>
-        </div>
-        <div className=" w-52 flex justify-center items-center gap-5">
-          <div className="flex items-center text-stone-200 m-2 font-medium cursor-pointer ">
-          <div data-testid="cartItem" className="p-2 h-[20px] mx-1 bg-orange-700 rounded-t-lg   flex items-center">
-            {cartItems.length}
-          </div>
-          <Link to={baseUrl + "/cart"}>Cart</Link>
-          
-            
-          </div>
-          {isLoggedIn ? (
-            <button
-              className="py-1 px-5 rounded-sm border-2 border-solid border-gray-500 text-white bg-transparent   "
-              onClick={() => setIsLoggedIn(false)}
-            >
-              LogIn
-            </button>
-          ) : (
-            <button
-              className="py-1 px-3 rounded-sm border-2 border-solid border-gray-500 text-white bg-transparent   "
-              onClick={() => setIsLoggedIn(true)}
-            >
-              LogOut
-            </button>
-          )}
-        </div>
+    <header className="bg-[#0b1419] text-white py-2 px-10 flex justify-between items-center shadow-md">
+      <Title />
+      <Location />
+      <div data-testid="onlineStatus" className="absolute top-0 left-0">
+        {isonline ? "📶" : "⛔"}
       </div>
-       
-      
-    </div>
+      <nav>
+        <ul className="flex space-x-4 text-lg">
+          <li className="hover:text-gray-400">
+            <Link to={"/"}>Home</Link>
+          </li>
+          <li className="hover:text-gray-400">
+            <Link to={"/recipes"}>Recipes</Link>
+          </li>
+          <li className="hover:text-gray-400">
+            <Link to={"/contact"}>Contact</Link>
+          </li>
+          <li className="hover:text-gray-400">
+            <Link to={"/about"}>About</Link>
+          </li>
+          <li className="hover:text-gray-400">
+            <Link to={"/instamart"}>InstaMart</Link>
+          </li>
+        </ul>
+      </nav>
+      <div className="flex items-center space-x-4">
+        <div className="relative flex items-center">
+          <span
+            data-testid="cartItem"
+            className="absolute -top-2 -right-2 bg-orange-700 text-white rounded-full px-2 text-sm"
+          >
+            {cartItems.length}
+          </span>
+          <Link to={"/cart"} className="flex items-center hover:text-gray-400">
+            Cart
+          </Link>
+        </div>
+        {isLoggedIn ? (
+          <button
+            className="py-1 px-5 border border-gray-500 rounded-sm hover:bg-gray-700 transition duration-300"
+            onClick={() => setIsLoggedIn(false)}
+          >
+            LogOut
+          </button>
+        ) : (
+          <button
+            className="py-1 px-5 border border-gray-500 rounded-sm hover:bg-gray-700 transition duration-300"
+            onClick={() => setIsLoggedIn(true)}
+          >
+            LogIn
+          </button>
+        )}
+      </div>
+    </header>
   );
 };
 

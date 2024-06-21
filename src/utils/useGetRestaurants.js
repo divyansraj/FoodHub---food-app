@@ -13,8 +13,8 @@ const useGetRestaurants = () => {
 
   const getRestaurants = async (latitude, longitude) => {
     try {
-      const apiUrl = 
-      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}&page_type=DESKTOP_WEB_LISTING`;
+      const apiUrl = `https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D${latitude}%26lng%3D${longitude}%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING`;
+      //const apiurl = `https://cors-proxy-ten-bice.vercel.app/api/proxy?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D${latitude}%26lng%3D${longitude}%26page_type%3DDESKTOP_WEB_LISTING`
       const data = await fetch(apiUrl);
       const json = await data.json();
 
